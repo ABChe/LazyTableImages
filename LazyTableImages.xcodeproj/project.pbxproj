@@ -13,6 +13,10 @@
 		F27A9AD7207E377700E6253A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27A9AD6207E377700E6253A /* Assets.xcassets */; };
 		F27A9ADA207E377700E6253A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27A9AD8207E377700E6253A /* LaunchScreen.storyboard */; };
 		F27A9ADD207E377700E6253A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9ADC207E377700E6253A /* main.m */; };
+		F27A9AE5207E3D4800E6253A /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9AE4207E3D4800E6253A /* RunLoopViewController.m */; };
+		F27A9AEA207E402900E6253A /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9AE9207E402900E6253A /* IconDownloader.m */; };
+		F27A9AED207E404300E6253A /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9AEC207E404300E6253A /* AppRecord.m */; };
+		F27A9AF0207E475200E6253A /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9AEF207E475200E6253A /* ParseOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		F27A9AD9207E377700E6253A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F27A9ADB207E377700E6253A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F27A9ADC207E377700E6253A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F27A9AE3207E3D4800E6253A /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		F27A9AE4207E3D4800E6253A /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		F27A9AE8207E402900E6253A /* IconDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		F27A9AE9207E402900E6253A /* IconDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		F27A9AEB207E404300E6253A /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
+		F27A9AEC207E404300E6253A /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
+		F27A9AEE207E475200E6253A /* ParseOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
+		F27A9AEF207E475200E6253A /* ParseOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,8 @@
 				F27A9ACE207E377600E6253A /* AppDelegate.m */,
 				F27A9AD0207E377600E6253A /* ViewController.h */,
 				F27A9AD1207E377600E6253A /* ViewController.m */,
+				F27A9AE7207E3E0900E6253A /* AppleLazyTableImages */,
+				F27A9AE6207E3D9800E6253A /* RunLoopLazyTableimages */,
 				F27A9AD3207E377600E6253A /* Main.storyboard */,
 				F27A9AD6207E377700E6253A /* Assets.xcassets */,
 				F27A9AD8207E377700E6253A /* LaunchScreen.storyboard */,
@@ -69,6 +83,28 @@
 				F27A9ADC207E377700E6253A /* main.m */,
 			);
 			path = LazyTableImages;
+			sourceTree = "<group>";
+		};
+		F27A9AE6207E3D9800E6253A /* RunLoopLazyTableimages */ = {
+			isa = PBXGroup;
+			children = (
+				F27A9AE3207E3D4800E6253A /* RunLoopViewController.h */,
+				F27A9AE4207E3D4800E6253A /* RunLoopViewController.m */,
+			);
+			path = RunLoopLazyTableimages;
+			sourceTree = "<group>";
+		};
+		F27A9AE7207E3E0900E6253A /* AppleLazyTableImages */ = {
+			isa = PBXGroup;
+			children = (
+				F27A9AEB207E404300E6253A /* AppRecord.h */,
+				F27A9AEC207E404300E6253A /* AppRecord.m */,
+				F27A9AE8207E402900E6253A /* IconDownloader.h */,
+				F27A9AE9207E402900E6253A /* IconDownloader.m */,
+				F27A9AEE207E475200E6253A /* ParseOperation.h */,
+				F27A9AEF207E475200E6253A /* ParseOperation.m */,
+			);
+			path = AppleLazyTableImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F27A9AED207E404300E6253A /* AppRecord.m in Sources */,
+				F27A9AE5207E3D4800E6253A /* RunLoopViewController.m in Sources */,
 				F27A9AD2207E377600E6253A /* ViewController.m in Sources */,
+				F27A9AEA207E402900E6253A /* IconDownloader.m in Sources */,
+				F27A9AF0207E475200E6253A /* ParseOperation.m in Sources */,
 				F27A9ADD207E377700E6253A /* main.m in Sources */,
 				F27A9ACF207E377600E6253A /* AppDelegate.m in Sources */,
 			);
