@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F26BCCEB207F88AC008FBF11 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F26BCCEA207F88AC008FBF11 /* RootViewController.m */; };
+		F26BCCED207F8BDC008FBF11 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26BCCEC207F8BDC008FBF11 /* RootViewController.storyboard */; };
 		F27A9ACF207E377600E6253A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9ACE207E377600E6253A /* AppDelegate.m */; };
 		F27A9AD2207E377600E6253A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F27A9AD1207E377600E6253A /* ViewController.m */; };
 		F27A9AD5207E377600E6253A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27A9AD3207E377600E6253A /* Main.storyboard */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F26BCCE9207F88AC008FBF11 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F26BCCEA207F88AC008FBF11 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F26BCCEC207F8BDC008FBF11 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		F27A9ACA207E377600E6253A /* LazyTableImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyTableImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27A9ACD207E377600E6253A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F27A9ACE207E377600E6253A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +108,9 @@
 				F27A9AE9207E402900E6253A /* IconDownloader.m */,
 				F27A9AEE207E475200E6253A /* ParseOperation.h */,
 				F27A9AEF207E475200E6253A /* ParseOperation.m */,
+				F26BCCE9207F88AC008FBF11 /* RootViewController.h */,
+				F26BCCEA207F88AC008FBF11 /* RootViewController.m */,
+				F26BCCEC207F8BDC008FBF11 /* RootViewController.storyboard */,
 			);
 			path = AppleLazyTableImages;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				F27A9ADA207E377700E6253A /* LaunchScreen.storyboard in Resources */,
 				F27A9AD7207E377700E6253A /* Assets.xcassets in Resources */,
 				F27A9AD5207E377600E6253A /* Main.storyboard in Resources */,
+				F26BCCED207F8BDC008FBF11 /* RootViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +188,7 @@
 			files = (
 				F27A9AED207E404300E6253A /* AppRecord.m in Sources */,
 				F27A9AE5207E3D4800E6253A /* RunLoopViewController.m in Sources */,
+				F26BCCEB207F88AC008FBF11 /* RootViewController.m in Sources */,
 				F27A9AD2207E377600E6253A /* ViewController.m in Sources */,
 				F27A9AEA207E402900E6253A /* IconDownloader.m in Sources */,
 				F27A9AF0207E475200E6253A /* ParseOperation.m in Sources */,

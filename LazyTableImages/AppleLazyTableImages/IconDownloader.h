@@ -17,6 +17,6 @@
 @property (nonatomic,copy   ) void (^completionHandler)(void);
 
 - (void)startDownload;
-- (void)cancaleDownload;
+- (void)cancelDownload;
 
 @end

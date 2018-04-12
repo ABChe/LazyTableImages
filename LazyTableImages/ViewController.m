@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RootViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -31,7 +32,7 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.titleArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -43,7 +44,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    if (indexPath.row == 0) {
+        RootViewController *vc = [[UIStoryboard storyboardWithName:[RootViewController description] bundle:nil] instantiateViewControllerWithIdentifier:[RootViewController description]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 

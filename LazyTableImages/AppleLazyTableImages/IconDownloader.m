@@ -52,9 +52,11 @@
            }
        }];
     }];
+    
+    [self.sessionTask resume];
 }
 
-- (void)cancaleDownload {
+- (void)cancelDownload {
     [self.sessionTask cancel];
     self.sessionTask = nil;
 }
