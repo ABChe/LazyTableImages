@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RootViewController.h"
+#import "RunLoopViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -46,6 +47,10 @@
     
     if (indexPath.row == 0) {
         RootViewController *vc = [[UIStoryboard storyboardWithName:[RootViewController description] bundle:nil] instantiateViewControllerWithIdentifier:[RootViewController description]];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    } else {
+        RunLoopViewController *vc = [[RunLoopViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
