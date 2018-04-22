@@ -10,5 +10,10 @@
 #import "AppRecord.h"
 
 @implementation AppRecord
+
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
+
 @end
 

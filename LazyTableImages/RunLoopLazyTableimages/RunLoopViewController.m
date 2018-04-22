@@ -9,15 +9,15 @@
 #import "RunLoopViewController.h"
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
-#import "RootViewController.h"
-
-#define kURLString @"http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=75/xml"
+#import "JSONModel.h"
+#import "AppRecord.h"
+#import "RunLoopTableViewCell.h"
 
 @interface RunLoopViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -25,6 +25,13 @@
 
 
 #pragma mark - Lifecycle
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.dataArray = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +42,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    [[SDWebImageDownloader sharedDownloader] cancelAllDownloads];
 }
 
 
@@ -45,34 +54,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell description] forIndexPath:indexPath];
-//    cell.textLabel.text = self.titleArray[indexPath.row];
+    RunLoopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[RunLoopTableViewCell description] forIndexPath:indexPath];
+    AppRecord *model = self.dataArray[indexPath.row];
+    [cell setModel:model indexPath:indexPath];
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
 #pragma mark - Method
 
 - (void)loadData {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *URL = [NSURL URLWithString:kURLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSLog(@"%@ %@", response, responseObject);
-        }
-    }];
-    [dataTask resume];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"appList" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    self.dataArray = [AppRecord arrayOfModelsFromDictionaries:[dic valueForKey:@"data"]
+                                                        error:nil];
+    [self.tableView reloadData];
 }
+
+
 #pragma mark - Lazyloading
 
 - (UITableView *)tableView {
@@ -83,7 +82,8 @@
         _tableView.estimatedSectionFooterHeight = 0.f;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:[UITableViewCell description]];
+        _tableView.allowsSelection = NO;
+        [_tableView registerClass:[RunLoopTableViewCell class]forCellReuseIdentifier:[RunLoopTableViewCell description]];
     }
     return _tableView;
 }

@@ -208,6 +208,30 @@ static NSString *const TopPaidAppsFeed =
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSMutableDictionary *dicData = [NSMutableDictionary dictionary];
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (AppRecord *model in self.entries) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        dic[@"appName"] = model.appName;
+        dic[@"imageURLString"] = model.imageURLString;
+        [dataArray addObject:dic];
+    }
+    dicData[@"data"] = dataArray;
+    NSLog(@"%@",dicData);
+    
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    //获取完整路径
+    NSString *documentsPath = [path objectAtIndex:0];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"appList.plist"];
+    NSMutableDictionary *usersDic = [[NSMutableDictionary alloc ] init];
+    //设置属性值
+    [usersDic setObject:dataArray forKey:@"data"];
+    //写入文件
+    [usersDic writeToFile:plistPath atomically:YES];
+}
 #pragma mark - Table cell image support
 
 // -------------------------------------------------------------------------------

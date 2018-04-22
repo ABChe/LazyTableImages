@@ -7,10 +7,11 @@
   Each one corresponds to a row in the app's table.
  */
 
-#import <Foundation/Foundation.h>
+//#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "JSONModel.h"
 
-@interface AppRecord : NSObject
+@interface AppRecord : JSONModel
 
 @property (nonatomic, strong) NSString *appName;
 @property (nonatomic, strong) UIImage *appIcon;
